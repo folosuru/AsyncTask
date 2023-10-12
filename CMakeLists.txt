@@ -65,7 +65,7 @@ target_link_options(${project_name_}
 		PRIVATE /OPT:REF
 		PRIVATE /SUBSYSTEM:CONSOLE
 		)
-target_link_libraries(${CMAKE_PROJECT_NAME} 
+target_link_libraries(${project_name_}
 	"${CMAKE_SOURCE_DIR}/SDK/lib/LiteLoader.lib"
 	"${CMAKE_SOURCE_DIR}/SDK/lib/bedrock_server_api.lib"
 	"${CMAKE_SOURCE_DIR}/SDK/lib/bedrock_server_var.lib"
