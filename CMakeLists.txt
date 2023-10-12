@@ -1,12 +1,14 @@
 cmake_minimum_required(VERSION 3.21)
+set(project_name_ AsyncTask)
 
-project(plugin)
+project(${project_name_})
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_BUILD_TYPE Release)
 
 file(GLOB_RECURSE SRC_FILES_DIR
     ${PROJECT_SOURCE_DIR}/src/*.c
+    ${PROJECT_SOURCE_DIR}/src/*.cpp
     ${PROJECT_SOURCE_DIR}/src/*.cpp
     ${PROJECT_SOURCE_DIR}/src/*.h
 )
@@ -62,13 +64,16 @@ add_link_options(
     /SUBSYSTEM:CONSOLE
 )
 
-add_library(${CMAKE_PROJECT_NAME} SHARED ${SRC_FILES_DIR})
+add_library(${project_name_} SHARED ${SRC_FILES_DIR})
 
 target_link_libraries(${CMAKE_PROJECT_NAME} 
 	"${CMAKE_SOURCE_DIR}/SDK/lib/LiteLoader.lib"
 	"${CMAKE_SOURCE_DIR}/SDK/lib/bedrock_server_api.lib"
 	"${CMAKE_SOURCE_DIR}/SDK/lib/bedrock_server_var.lib"
 	"${CMAKE_SOURCE_DIR}/SDK/lib/SymDBHelper.lib"
+)
+target_include_directories(${project_name_} PRIVATE
+		${${project_name_}_SOURCE_DIR}/include/
 )
 
 add_custom_command(TARGET ${CMAKE_PROJECT_NAME} PRE_BUILD
