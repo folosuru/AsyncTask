@@ -75,6 +75,6 @@ target_include_directories(${project_name_} PRIVATE
 		${${project_name_}_SOURCE_DIR}/include/
 )
 
-add_custom_command(TARGET ${CMAKE_PROJECT_NAME} PRE_BUILD
+add_custom_command(TARGET ${project_name_} PRE_BUILD
     COMMAND cmd /c ${PROJECT_SOURCE_DIR}/prepare_libraries.cmd ${PROJECT_SOURCE_DIR}
 )
