@@ -72,9 +72,9 @@ target_link_libraries(${project_name_}
 	"${CMAKE_SOURCE_DIR}/SDK/lib/SymDBHelper.lib"
 )
 target_include_directories(${project_name_} PRIVATE
-		${${project_name_}_SOURCE_DIR}/include/
+		${PROJECT_SOURCE_DIR}/include/
 )
 
 add_custom_command(TARGET ${project_name_} PRE_BUILD
-    COMMAND cmd /c ${PROJECT_SOURCE_DIR}/prepare_libraries.cmd ${PROJECT_SOURCE_DIR}
+    COMMAND cmd /c ${CMAKE_SOURCE_DIR}/prepare_libraries.cmd ${CMAKE_SOURCE_DIR}
 )
