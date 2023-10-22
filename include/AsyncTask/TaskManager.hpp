@@ -8,9 +8,5 @@ namespace AsyncTask {
 
 void ASYNC_TASK_DLL add_task(const std::shared_ptr<AsyncTaskBase>&);
 
-
-void start_thread();
-void stop_thread();
-void run_finished_tasks();
 }
 #endif  // TES_THREADING_HEADER_THREADING_THREADING_HPP_

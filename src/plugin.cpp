@@ -7,6 +7,7 @@
 #include <llapi/ScheduleAPI.h>
 #include <llapi/EventAPI.h>
 #include <AsyncTask/TaskManager.hpp>
+#include "AsyncTask/AsyncTask_manager.hpp"
 #include "version.h"
 
 // We recommend using the global logger.

@@ -4,9 +4,8 @@
 #include <condition_variable>
 #include "mutex_data.hpp"
 
-#include <iostream>
 namespace AsyncTask {
-std::thread runnning_thread;
+std::thread running_thread;
 
 bool is_wakeup;
 bool close_thread = false;
@@ -23,7 +22,7 @@ void add_task(const std::shared_ptr<AsyncTaskBase>& task) {
 }
 
 void start_thread() {
-    runnning_thread = std::thread([](){
+    running_thread = std::thread([](){
         while (true) {
             while (true) {
                 if (mutex::thread_task_empty()) break;
@@ -57,7 +56,7 @@ void stop_thread() {
         close_thread = true;
         cv.notify_all();
     }
-    runnning_thread.join();
+    running_thread.join();
 }
 
 }
