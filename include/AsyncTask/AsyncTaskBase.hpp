@@ -10,6 +10,8 @@ namespace AsyncTask {
  */
 class ASYNC_TASK_DLL AsyncTaskBase {
 public:
+
+    virtual ~AsyncTaskBase(){};
     /**
      * onRun
      * running in other thread.
